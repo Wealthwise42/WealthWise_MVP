@@ -27,3 +27,41 @@ document.getElementById("submit-btn").addEventListener("click", function() {
     productList.innerHTML = "<li>Nessun prodotto trovato</li>";
   }
 });
+document.getElementById("analyze-expenses").addEventListener("click", function() {
+  const expenses = {
+    food: parseFloat(document.getElementById("food").value) || 0,
+    rent: parseFloat(document.getElementById("rent").value) || 0,
+    leisure: parseFloat(document.getElementById("leisure").value) || 0,
+    transport: parseFloat(document.getElementById("transport").value) || 0,
+    clothing: parseFloat(document.getElementById("clothing").value) || 0,
+    health: parseFloat(document.getElementById("health").value) || 0,
+    savings: parseFloat(document.getElementById("savings").value) || 0,
+  };
+
+  const totalExpenses = Object.values(expenses).reduce((acc, val) => acc + val, 0);
+
+  // Logica per i prodotti consigliati
+  const products = [
+    { name: "Carta Cashback", criteria: expenses.leisure > 100 },
+    { name: "Conto Risparmio", criteria: expenses.savings > 200 },
+    { name: "Mutuo Giovani", criteria: expenses.rent > 500 },
+    { name: "Assicurazione Salute", criteria: expenses.health > 50 },
+    { name: "Carta Premium", criteria: totalExpenses > 1500 },
+  ];
+
+  const recommendations = products.filter(product => product.criteria);
+
+  const recommendationsList = document.getElementById("recommendations-list");
+  recommendationsList.innerHTML = "";
+
+  if (recommendations.length > 0) {
+    recommendations.forEach(product => {
+      const li = document.createElement("li");
+      li.textContent = product.name;
+      recommendationsList.appendChild(li);
+    });
+  } else {
+    recommendationsList.innerHTML = "<li>Nessun prodotto trovato per il tuo profilo.</li>";
+  }
+});
+
