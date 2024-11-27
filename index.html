@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wealth Wise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Wealth Wise</h1>
+    <p>Trova il prodotto finanziario perfetto per te</p>
+  </header>
+
+  <main>
+    <section id="profile">
+      <h2>Profilazione Utente</h2>
+      <form id="user-form">
+        <label for="income">Fascia di reddito mensile:</label>
+        <select id="income">
+          <option value="low">Meno di €1500</option>
+          <option value="medium">€1500 - €3000</option>
+          <option value="high">Più di €3000</option>
+        </select>
+
+        <label for="goal">Obiettivo finanziario:</label>
+        <select id="goal">
+          <option value="saving">Risparmio</option>
+          <option value="investment">Investimenti</option>
+          <option value="debt">Gestione Debito</option>
+        </select>
+
+        <button type="button" id="submit-btn">Trova Prodotti</button>
+      </form>
+    </section>
+
+    <section id="results">
+      <h2>Risultati</h2>
+      <ul id="product-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
