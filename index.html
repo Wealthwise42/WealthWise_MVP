@@ -13,31 +13,38 @@
   </header>
 
   <main>
-    <section id="profile">
-      <h2>Profilazione Utente</h2>
-      <form id="user-form">
-        <label for="income">Fascia di reddito mensile:</label>
-        <select id="income">
-          <option value="low">Meno di €1500</option>
-          <option value="medium">€1500 - €3000</option>
-          <option value="high">Più di €3000</option>
-        </select>
+   <section id="expense-form">
+  <h2>Profilazione delle tue spese</h2>
+  <form id="spending-form">
+    <label for="food">Alimentari (€/mese):</label>
+    <input type="number" id="food" placeholder="Es. 300">
 
-        <label for="goal">Obiettivo finanziario:</label>
-        <select id="goal">
-          <option value="saving">Risparmio</option>
-          <option value="investment">Investimenti</option>
-          <option value="debt">Gestione Debito</option>
-        </select>
+    <label for="rent">Affitto/Mutuo (€/mese):</label>
+    <input type="number" id="rent" placeholder="Es. 800">
 
-        <button type="button" id="submit-btn">Trova Prodotti</button>
-      </form>
-    </section>
+    <label for="leisure">Tempo libero (€/mese):</label>
+    <input type="number" id="leisure" placeholder="Es. 150">
 
-    <section id="results">
-      <h2>Risultati</h2>
-      <ul id="product-list"></ul>
-    </section>
+    <label for="transport">Trasporti (€/mese):</label>
+    <input type="number" id="transport" placeholder="Es. 100">
+
+    <label for="clothing">Abbigliamento (€/mese):</label>
+    <input type="number" id="clothing" placeholder="Es. 50">
+
+    <label for="health">Spese sanitarie (€/mese):</label>
+    <input type="number" id="health" placeholder="Es. 75">
+
+    <label for="savings">Risparmio (€/mese):</label>
+    <input type="number" id="savings" placeholder="Es. 200">
+
+    <button type="button" id="analyze-expenses">Analizza le Spese</button>
+  </form>
+</section>
+
+<section id="recommendations">
+  <h2>Prodotti consigliati per te</h2>
+  <ul id="recommendations-list"></ul>
+</section>
   </main>
 
   <script src="script.js"></script>
