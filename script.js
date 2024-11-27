@@ -2,11 +2,13 @@ document.getElementById("submit-btn").addEventListener("click", function() {
   const income = document.getElementById("income").value;
   const goal = document.getElementById("goal").value;
 
-  const products = [
-    { name: "Conto Base", income: "low", goal: "saving" },
-    { name: "Carta Oro", income: "high", goal: "investment" },
-    { name: "Prestito Personale", income: "medium", goal: "debt" },
-  ];
+ const products = [
+  { name: "Conto Base", income: "low", goal: "saving" },
+  { name: "Carta Oro", income: "high", goal: "investment" },
+  { name: "Prestito Personale", income: "medium", goal: "debt" },
+  { name: "Mutuo Giovani", income: "medium", goal: "saving" },
+  { name: "Fondo ETF", income: "high", goal: "investment" },
+];
 
   const results = products.filter(
     product => product.income === income && product.goal === goal
